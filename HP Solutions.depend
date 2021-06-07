@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1623021560 source:c:\users\bbedechian\desktop\utn\segundo cuatrimestre\lab de computación ii\hp solutions\functions.cpp
+	<iostream>
+	<stdlib.h>
+	<cstring>
+	<string.h>
+	<cstdlib>
+	"functions.h"
+
+1623023165 c:\users\bbedechian\desktop\utn\segundo cuatrimestre\lab de computación ii\hp solutions\functions.h
+
+1623023165 source:c:\users\bbedechian\desktop\utn\segundo cuatrimestre\lab de computación ii\hp solutions\main.cpp
+	<iostream>
+	<stdlib.h>
+	<cstring>
+	<string>
+	<cstdlib>
+	"functions.h"
+
