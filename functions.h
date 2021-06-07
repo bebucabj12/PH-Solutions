@@ -6,6 +6,7 @@ int menuCliente();
 int menuPerfil();
 int menuDispositivos();
 int menuPrestador();
+void loginPrestador();
 int menuResgistrado();
 void menuRegistrarse();
 

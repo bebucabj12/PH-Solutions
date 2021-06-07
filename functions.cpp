@@ -145,35 +145,74 @@ int menuPrestador(){
         cout << "\t\t\t\t\t\tBienvenido Prestador" << endl;
         cout << "\t\t\t\t\t\t--------------------" << endl;
         cout << "\t\t1.Solicitudes recibidas" << endl;
-        cout << "\t\t2.Consultar presupuestos" << endl;
-        cout << "\t\t3.Dispositivos" << endl;
-        cout << "\t\t4.Perfil de usuario" << endl;
-        cout << "\t\t5.Puntuacion de prestadores" << endl;
+        cout << "\t\t2.Presupuestos emitidos" << endl;
+        cout << "\t\t3.Presupuestos aceptados" << endl;
+        cout << "\t\t4.Presupuestos rechazados" << endl;
+        cout << "\t\t5.Perfil" << endl;
+        cout << "\t\t6.Puntuacion de clientes" << endl;
         cout << "\t\t0.Volver" << endl;
         cin >> aux;
         system("cls");
 
         switch(aux){
         case 1:
-            cout << "Aca va la carga de presupuesto" << endl;
+            cout << "Aca va el listado de las solicitudes recibidas y cada una debe tener la opcion de generar presupuesto" << endl;
             break;
         case 2:
-            cout << "Aca va el listado con todos sus presupuestos" << endl;
+            cout << "Aca va el listado de los presupuestos emitidos" << endl;
             break;
         case 3:
-            menuDispositivos();
+            cout << "Aca va el listado de los presupuestos aceptados por el cliente" << endl;
             break;
         case 4:
-            menuPerfil();
+            cout << "Aca va el listado de los presupuestos rechazados por el cliente" << endl;
             break;
         case 5:
-            cout << "Aca va el listado con la puntuacion que le dieron los prestadores" << endl;
+            menuPerfil();
+            break;
+        case 6:
+            cout << "Aca va el listado con la puntuacion que le dieron los clientes" << endl;
             break;
         case 0:
             return 0;
             break;
         }
     } while(aux !=0);
+}
+
+void loginPrestador(){
+    //El usuario sera el dni
+    char usuario[9], password[10];
+    int cont = 0;
+    bool ingresa = false;
+
+    do {
+        system("cls");
+        cout << "\t\t\t\t\t\tLogin" << endl;
+        cout << "\t\t\t\t\t\t-----" << endl;
+        cout << "\n\tCuit/Cuil: ";
+        cin >> usuario;
+        cout << "\tPassword: ";
+        cin >> password;
+
+        //Compara si lo ingresado coincide con las credenciales
+        if(strcmp(usuario, USER) == 0 && strcmp(password, PASS) == 0){
+            ingresa = true;
+        } else {
+            cout << "El Cuit/Cuil y/o password son incorrectos" << endl;
+            system("pause");
+            cont++;
+        }
+    } while(ingresa == false && cont < 3); //Determina la cantidad de intentos incorrectos
+
+    if(ingresa == false){
+        cout << "No ha podido ingresar. Por favor intentelo nuevamente." << endl;
+    } else {
+        cout << "Se ha logueado correctamente" << endl;
+        menuPrestador();
+    }
+
+    cin.get();
 }
 
 //Menu si ya esta logueado, por el momento los logins seran los mismos para prestador y cliente
@@ -194,12 +233,12 @@ int menuResgistrado(){
         case 1:
             loginCliente();
             break;
-        /*case 2:
-            login();
+        case 2:
+            loginPrestador();
             break;
         case 0:
             return 0;
-            break;*/
+            break;
         }
 
         /*cout << "1.Soy Cliente" << endl;
